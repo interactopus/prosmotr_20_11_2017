@@ -49,12 +49,24 @@
 
   <script>
     var currentNumberDisplay = document.getElementById('current-number-display');
-    function randomNumber() { return Math.floor(1400 + Math.random() * Math.pow(10, 2)); } ;
-    function updateNumber(){ currentNumberDisplay.innerText = randomNumber(); }
+
+    function randomNumber() {
+      return Math.floor(1400 + Math.random() * Math.pow(10, 2));
+    };
+
+    var minNumber = 1400;
+    var maxNumber = 1450;
+    var currentNumber = minNumber;
+
+    function updateNumber() {
+      currentNumberDisplay.innerText = currentNumber++;
+
+      if (currentNumber > maxNumber)
+        currentNumber = minNumber;
+    }
 
     updateNumber();
     setInterval(updateNumber, 10000);
-
   </script>
 </body>
 
