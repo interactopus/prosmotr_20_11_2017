@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>Getting Started</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #0000ff;
+    }
+
+    .text,
+    .numbers {
+      color: red;
+      font-family: "Helvetica";
+    }
+
+    .text {
+      font-size: 30pt;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .numbers {
+      font-size: 200pt;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="text">Здравствуйте, ваш<br />номер в очереди:</div>
+    <div id="current-number-display" class="numbers">1400</div>
+  </div>
+
+  <script>
+    var currentNumberDisplay = document.getElementById('current-number-display');
+    function randomNumber() { return Math.floor(1400 + Math.random() * Math.pow(10, 2)); } ;
+    function updateNumber(){ currentNumberDisplay.innerText = randomNumber(); }
+
+    updateNumber();
+    setInterval(updateNumber, 10000);
+
+  </script>
+</body>
+
+</html>
